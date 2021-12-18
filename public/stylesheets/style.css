@@ -1,0 +1,21 @@
+.nav-item{ 
+    padding: 20px;
+}
+
+.container-fluid{
+padding: 0px 50px;
+}
+
+.hero{
+
+    background-image: linear-gradient(rgba(255, 255, 255, 0.521),rgba(255, 255, 255, 0.521)), url(/assets/imgs/hero.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+
+}
+
+form.signup,
+form.login {
+  margin-top: 50px;
+}
