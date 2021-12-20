@@ -4,6 +4,7 @@ dotenv.config();
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
     host: 'localhost',
     dialect: 'mysql',
+    opratoreAliases: false, 
     define: {
         timestamp: false,
     },
@@ -16,14 +17,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     },
 });
 
-// try{
-//     await sequelize.authenticate();
-//     console.log("db connected");
-// }
-// catch(error){
-//     console.log("db not connected");
-// }
+module.exports = sequelize;
 
 
 
-module.exports = { conn: sequelize.connectionManager.getConnection() };

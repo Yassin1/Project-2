@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row justify-content-md-center form1container">
+        <div class="col-sm-4">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab"
+                        aria-controls="login" aria-selected="true">Log in</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup" role="tab"
+                        aria-controls="signup" aria-selected="false">Sign Up</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                    <form method="post" action="http://localhost:3000/api/signin">
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input name="email" type="email" class="form-control">
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input name="password" type="password" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                    <form method="POST" action="http://localhost:3000/api/signup">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input name="user_name" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input name="user_email" type="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone number</label>
+                            <input name="user_phonenumber" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input name="user_password" type="password" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
