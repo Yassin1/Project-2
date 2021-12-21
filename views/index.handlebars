@@ -5,15 +5,15 @@
       <h1 class="display-4 fw-bold" id="words">Quick Ship</h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">A reliable and safe way to do E-commerce.
-          quick ship. An all inclucisve companey that will handle your prodcuts like its our own.
-          We speiclaize in small Buissness of all kind. with our complete fulfilment center streatched across
+          Quick ship. An all inclucisve companey that will handle your prodcuts like its our own.
+          We speiclaize in small Buissness of all kind. with our fulfilment center streatched across
           the country, We will save you time and energy by reciving and manging your orders and shipments.
-          quick ship, will be your partener in Arms.
+          Quick ship, will be your partener in Arms.
           chose from our 3 services. Any questions? please sumbit a form or lets chat down below.
         </p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get started</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Call Now</button>
+          <a type="button" class="btn btn-lg btn-block btn-outline-primary" href="signup">Get started</a>
+
         </div>
       </div>
     </div>
@@ -22,11 +22,11 @@
     <div class="row">
       <div class="col-md-4 px-3">
         <div class="card">
-          <img src="/assets/imgs/mainimg.jpg" class="card-img-top" alt=" warehouse gif">
+          <img src="/assets/imgs/inventory.png" class="card-img-top" alt=" warehouse gif">
           <div class="card-body">
             <h5 class="card-title">Reciving</h5>
-            <p class="card-text">quick ship will be able to recive your shipments and send out orders on your Behalf.
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text">Quick ship will be able to recive your shipments and send out orders on your Behalf.
+              <a href="services" class="btn btn-primary">services</a>
           </div>
         </div>
 
@@ -34,24 +34,25 @@
 
       <div class="col-md-4 px-3">
         <div class="card">
-          <img src="/assets/imgs/mainimg.jpg" class="card-img-top" alt=" warehouse gif">
+          <img src="/assets/imgs/inventory.png" class="card-img-top" alt=" warehouse gif">
           <div class="card-body">
             <h5 class="card-title">Inspection</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            <p class="card-text"> Quick ship will be your eyes-we will make and damages or mistakes in order are
+              handeled.
               content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="services" class="btn btn-primary">services</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-4 px-3">
         <div class="card">
-          <img src="/assets/imgs/mainimg.jpg" class="card-img-top" alt=" warehouse gif">
+          <img src="/assets/imgs/inventory.png" class="card-img-top" alt=" warehouse gif">
           <div class="card-body">
             <h5 class="card-title">Inventory Mangment</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text"> With our own invnetory mangment system you will be able to fill in your shipments
+              before thy are arrive at our wearhouse.</p>
+            <a href="services" class="btn btn-primary">services</a>
           </div>
         </div>
 
@@ -61,7 +62,7 @@
   </section>
 </main>
 <script>
-  
+
   let words = [
     'Quick', 'Reliable', 'Dependable']
   let counter = 0;
@@ -73,7 +74,7 @@
     document.getElementById('words').innerText = words[counter];
     counter++;
   }
-  
+
   setInterval(function () {
     changingwords();
   }, 3000);
