@@ -2,7 +2,7 @@
 
   <section class="hero">
     <div class="px-4 pt-5 my-5 text-center border-bottom">
-      <h1 class="display-4 fw-bold">Quick Ship</h1>
+      <h1 class="display-4 fw-bold" id="words">Quick Ship</h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">A reliable and safe way to do E-commerce.
           quick ship. An all inclucisve companey that will handle your prodcuts like its our own.
@@ -12,7 +12,7 @@
           chose from our 3 services. Any questions? please sumbit a form or lets chat down below.
         </p>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">sign up</button>
+          <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get started</button>
           <button type="button" class="btn btn-outline-secondary btn-lg px-4">Call Now</button>
         </div>
       </div>
@@ -60,3 +60,22 @@
 
   </section>
 </main>
+<script>
+  
+  let words = [
+    'Quick', 'Reliable', 'Dependable']
+  let counter = 0;
+  function changingwords() {
+    if (counter > words.length - 1) {
+      counter = 0;
+    }
+
+    document.getElementById('words').innerText = words[counter];
+    counter++;
+  }
+  
+  setInterval(function () {
+    changingwords();
+  }, 3000);
+
+</script>

@@ -7,14 +7,12 @@ const bodyparser = require('body-parser');
 const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
 const path = require('path');
 const PORT = process.env.PORT || 3001;
+const User = require('./models/Users.js');
+const Inventory = require('./models/Inventory.js');
 
-
-
+const cookieParser = require('cookie-parser');
 
 dotenv.config();
-
-const User = require('./models/Users.js');
-const { REPL_MODE_STRICT } = require('repl');
 
 const app = express();
 app.engine('handlebars',
@@ -29,6 +27,19 @@ app.use(
     })
 );
 
+app.use(cookieParser(
+
+));
+
+app.use(
+    session({
+        key: '1111',
+        secret: '1111',
+        resave: false,
+        saveUninitialized: false
+    })
+
+)
 app.use(bodyparser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -63,6 +74,21 @@ app.get('/signup', (req, res) => {
     });
 });
 
+
+
+app.get('/addinventory', (req, res) => {
+    if (
+        req.session.user == undefined || req.session.user == null
+    ) {
+        res.redirect('/signup');
+    }
+    res.render('addinventory', {
+        title: 'Add inventory'
+    });
+
+});
+
+
 app.post('/api/signup', (req, res) => {
 
     User.create({
@@ -90,8 +116,28 @@ app.post('/api/signin', (req, res) => {
         if (data == null || data == false) {
             res.send("invalid email or password");
         } else {
-            res.send("loged in");
+            req.session.user = data.user_id;
+            res.redirect("/addinventory");
         }
     });
 });
 
+
+
+app.post('/api/addinventory', (req, res) => {
+
+
+
+    Inventory.create({
+        inventory_shipping_date: req.body.date,
+        inventory_productname: req.body.productname,
+        inventory_sku: req.body.sku,
+        inventory_qtyorderd: req.body.qtyordered,
+        inventory_damages: req.body.damages,
+        inventory_user_id: parseInt(req.session.user)
+    }).catch((error) => {
+        console.log(error);
+    }).then((data) => {
+        res.send("inventory updated");
+    })
+});

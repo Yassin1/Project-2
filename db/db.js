@@ -7,6 +7,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     opratoreAliases: false, 
     define: {
         timestamp: false,
+    freezeTableName: true,
     },
 
     pool: {
