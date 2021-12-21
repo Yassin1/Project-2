@@ -2,24 +2,22 @@ const express = require('express');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const handlebars = require('handlebars');
-const exphps = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const bodyparser = require('body-parser');
-const { allowInsecurePrototypeAccess } = require('@handlebars/allow-prototype-access');
+
 const path = require('path');
 const PORT = process.env.PORT || 3001;
 const User = require('./models/Users.js');
 const Inventory = require('./models/Inventory.js');
 
-const cookieParser = require('cookie-parser');
+
 
 dotenv.config();
 
+const hbs = exphbs.create({});
+
 const app = express();
-app.engine('handlebars',
-    exphps.engine({
-        defaultLayout: "main",
-        handlebars: allowInsecurePrototypeAccess(handlebars),
-    }));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(
     bodyparser.urlencoded({
@@ -27,9 +25,6 @@ app.use(
     })
 );
 
-app.use(cookieParser(
-
-));
 
 app.use(
     session({
